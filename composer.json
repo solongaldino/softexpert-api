@@ -1,0 +1,15 @@
+{
+    "name": "softexpert/api",
+    "autoload": {
+        "psr-4": {
+            "Softexpert\\Api\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Solon Galdino",
+            "email": "solonfisicaufpb@gmail.com"
+        }
+    ],
+    "require": {}
+}
