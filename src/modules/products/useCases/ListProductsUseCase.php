@@ -2,8 +2,21 @@
 
 namespace Modules\Products\UseCases;
 
+use Shared\Repositories\BaseRepository;
+
 class ListProductsUseCase{
+
+    private $baseRepository;
+
+    function __construct(BaseRepository $baseRepository){
+        $this->baseRepository = $baseRepository;
+    }
+
     public function run(){
-        echo "<h1>Listando produtos</h1>";
+        
+        
+        
+        $this->getEntityManager();
+        return ["message"=> "Olá mundo", "type"=>"test"];
     }
 }

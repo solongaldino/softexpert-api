@@ -14,7 +14,8 @@ class ListProductsController extends BaseController {
     }
 
     public function handle(){
-        $this->listProductsUseCase->run();
+        $result = $this->listProductsUseCase->run();
+        return $this->responseJson($result);
     }
 
 }

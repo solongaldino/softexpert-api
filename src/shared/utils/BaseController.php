@@ -10,20 +10,27 @@ class BaseController {
         $this->method = $_SERVER['REQUEST_METHOD'];
     }
 
-    function getBody(){
+    public function getBody(){
         return $this->body;
     }
 
-    function getQuery(){
+    public function getQuery(){
         return $this->query;
     }
 
-    function getParams(){
+    public function getParams(){
         return $this->params;
     }
 
-    function getMethod(){
+    public function getMethod(){
         return $this->method;
+    }
+
+    public function responseJson(Array $data, Int $statusCode = 200){
+        header("Content-Type: application/json; charset=UTF-8");
+        http_response_code($statusCode);
+        echo json_encode($data);
+        exit();
     }
 
 }

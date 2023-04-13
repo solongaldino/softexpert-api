@@ -12,6 +12,8 @@
     }
   ],
   "require": {
-    "php-di/php-di": "^6.4"
+    "php-di/php-di": "^6.4",
+    "doctrine/orm": "^2.14",
+    "vlucas/phpdotenv": "^5.5"
   }
 }
