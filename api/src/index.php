@@ -1,5 +1,5 @@
 <?php
-
+// phpinfo();die();
 namespace Softexpert\Api;
 
 ini_set('display_errors', 1);

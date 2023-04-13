@@ -1,24 +1,20 @@
 <?php
 
-namespace Shared\Repositories;
+namespace Shared\Factories;
 
-use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\DBAL\DriverManager;
+use Doctrine\ORM\EntityManager;
+use Doctrine\ORM\ORMSetup;
 
-class BaseRepository{
-    
-    private $entityManager;
+class EntityManagerFactory{
 
-    function __construct(){
-        $this->entityManager = $this->configEntityManager();
-    }
-
-    public function getEntityManager(){
-        return $this->entityManager;
-    }
-
-    private function configEntityManager(){
+    /**
+     * @return EntityManagerInterface
+     * @throws \Doctrine\ORM\ORMException
+     */    
+    public function getEntityManager(): EntityManagerInterface
+    {
         
         $paths = [__DIR__ .'/../entities'];
         
