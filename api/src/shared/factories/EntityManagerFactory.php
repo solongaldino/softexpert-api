@@ -4,6 +4,7 @@ namespace Shared\Factories;
 
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\DBAL\DriverManager;
+use Doctrine\DBAL\Tools\DsnParser;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\ORMSetup;
 
@@ -20,15 +21,18 @@ class EntityManagerFactory{
         
         $isDevMode = false;
 
-        $dbParams = [
-            'driver'   => 'pdo_mysql',
-            'user'     => $_ENV['DB_USER'],
-            'password' => $_ENV['DB_PASSWORD'],
-            'dbname'   => $_ENV['DB_NAME'],
-        ];
+        // $connectionParams = [
+        //     'dbname'   => 'softexpert-api',
+        //     'user'     => 'postgres',
+        //     'password' => 'postgres',
+        //     'host'     => 'postgres',
+        //     'driver'   => 'pdo_pgsql',
+        // ];
 
-        $config = ORMSetup::createAttributeMetadataConfiguration($paths, $isDevMode);    
-        $connection = DriverManager::getConnection($dbParams, $config);
+        $dsnParser = new DsnParser(['mysql' => 'mysqli', 'postgresql' => 'pgsql']); //https://www.doctrine-project.org/projects/doctrine-dbal/en/current/reference/configuration.html
+        $connectionParams = $dsnParser->parse('postgresql://postgres:postgres@localhost:5433/api');
+        $config = ORMSetup::createAttributeMetadataConfiguration($paths, $isDevMode);
+        $connection = DriverManager::getConnection($connectionParams, $config);
         
         return new EntityManager($connection, $config);
     }
