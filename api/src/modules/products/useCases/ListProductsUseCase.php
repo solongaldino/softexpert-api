@@ -14,9 +14,7 @@ class ListProductsUseCase{
 
     public function run(){
         
-
-        
-        var_dump($this->baseRepository->getEntityManager());
+        var_dump($this->baseRepository->getEntityManager()->getConnection());
         return ["message"=> "Olá mundo", "type"=>"test"];
     }
 }

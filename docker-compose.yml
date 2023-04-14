@@ -5,17 +5,16 @@ services:
     image: nginx:latest
     container_name: softexpert-nginx
     ports:
-      - "8000:80"
-      - "8001:81"
+      - "8080:80"
+      - "9090:90"
     volumes:
-      - ./api:/var/www/html/api
       - ./web:/var/www/html/web
       - ./default.conf:/etc/nginx/conf.d/default.conf
-    links:
-      - php-fpm
 
-  php-fpm:
-    image: php:8.2.4-fpm
+  phpfpm:
+    build:
+      context: .
+      dockerfile: Dockerfile-php-fpm
     container_name: softexpert-php-fpm
     volumes:
       - ./api:/var/www/html/api

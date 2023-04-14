@@ -1,0 +1,10 @@
+FROM php:8.2.4-fpm
+
+RUN mkdir -p /var/www/html/api
+
+WORKDIR /var/www/html/api
+
+COPY api/ ./
+
+RUN php composer.phar install
+
