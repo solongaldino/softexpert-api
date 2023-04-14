@@ -1,8 +1,0 @@
-FROM nginx:latest
-
-RUN mkdir -p /var/www/html/web
-
-WORKDIR /var/www/html/web
-
-COPY web/ ./
-

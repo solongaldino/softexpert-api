@@ -4,7 +4,7 @@ RUN mkdir -p /var/www/html/api
 
 WORKDIR /var/www/html/api
 
-COPY api/ ./
+COPY ./api/ ./
 
 RUN php composer.phar install
 

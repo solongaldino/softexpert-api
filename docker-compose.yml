@@ -9,9 +9,9 @@ services:
       - "9090:90"
     volumes:
       - ./web:/var/www/html/web
-      - ./default.conf:/etc/nginx/conf.d/default.conf
+      - ./docker/files/nginx/default.conf:/etc/nginx/conf.d/default.conf
 
-  phpfpm:
+  php-fpm:
     build:
       context: .
       dockerfile: Dockerfile-php-fpm
@@ -29,8 +29,8 @@ services:
     ports:
       - "5433:5432"
     volumes:
-      - ./volumes/postgresql/data:/var/lib/postgresql/data
-      - ./scheme-db.sql:/docker-entrypoint-initdb.d/scheme-db.sql
+      - ./docker/volumes/postgresql/data:/var/lib/postgresql/data
+      - ./docker/files/postgres/scheme-db.sql:/docker-entrypoint-initdb.d/scheme-db.sql
 
   pgadmin:
     image: dpage/pgadmin4
