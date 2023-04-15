@@ -9,7 +9,7 @@ class CreateProductController extends BaseController {
 
     private $createProductsUseCase;
 
-    function __construct(CreateProductsUseCase $createProductsUseCase){
+    function __construct(CreateProductUseCase $createProductsUseCase){
         $this->createProductsUseCase = $createProductsUseCase;
     }
 

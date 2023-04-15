@@ -1,5 +1,11 @@
 FROM php:8.2.4-fpm
 
+RUN apt update
+
+RUN apt install -y libpq-dev gcc
+
+RUN docker-php-ext-install pgsql
+
 RUN mkdir -p /var/www/html/api
 
 WORKDIR /var/www/html/api

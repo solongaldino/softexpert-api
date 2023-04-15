@@ -17,4 +17,13 @@ class BaseRepository{
         return $this->entityManager;
     }
 
+    public function save($e){
+        try{
+            $this->getEntityManager()->persist($e);
+            $this->getEntityManager()->flush();
+        }catch (\Exception $ex){
+            throw $ex;
+        } return $e;
+    }
+
 }

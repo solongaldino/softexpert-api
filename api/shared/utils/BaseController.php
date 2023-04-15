@@ -11,7 +11,8 @@ class BaseController {
     }
 
     public function getBody(){
-        return $this->body;
+        $this->body = file_get_contents("php://input", true);
+        return json_decode($this->body, true);
     }
 
     public function getQuery(){
@@ -26,10 +27,16 @@ class BaseController {
         return $this->method;
     }
 
-    public function responseJson(Array $data, Int $statusCode = 200){
+    public function responseJson($data, Int $statusCode = 200){
         header("Content-Type: application/json; charset=UTF-8");
         http_response_code($statusCode);
-        echo json_encode($data);
+        if(is_array($data)){
+            echo json_encode($data);
+        }elseif(is_object($data)){
+            echo json_encode($data);
+        }else{
+            new ApiError(400, "Convert response error");
+        }
         exit();
     }
 

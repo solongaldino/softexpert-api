@@ -22,7 +22,7 @@ class EntityManagerFactory{
         $isDevMode = false;
 
         $dsnParser = new DsnParser(['mysql' => 'mysqli', 'postgresql' => 'pgsql']); //https://www.doctrine-project.org/projects/doctrine-dbal/en/current/reference/configuration.html
-        $connectionParams = $dsnParser->parse('postgresql://postgres:postgres@localhost:5433/api');
+        $connectionParams = $dsnParser->parse('postgresql://postgres:postgres@postgres:5432/api');
         $config = ORMSetup::createAttributeMetadataConfiguration($paths, $isDevMode);
         $connection = DriverManager::getConnection($connectionParams, $config);
         
