@@ -49,6 +49,9 @@ class Router
           }
         }
  
+      }elseif($_SERVER['REQUEST_URI'] === "/status"){
+        echo "<h1>Api status ok!</h1>";
+        die();
       }else{
         
         if($amountRoutes <=0){
