@@ -161,6 +161,7 @@ Content-Type: application/json; charset=UTF-8
     </ul>
   </li>
   <li>
+  <br/>
     Cadastro de tipo de produto
     <ul>
       <li><strong>metodo: </strong>POST</li>
@@ -176,6 +177,7 @@ Content-Type: application/json; charset=UTF-8
     </ul>
   </li>
   <li>
+  <br/>
     Cadastro de produto
     <ul>
       <li><strong>metodo: </strong>POST</li>
@@ -193,6 +195,7 @@ Content-Type: application/json; charset=UTF-8
     </ul>
   </li>
   <li>
+  <br/>
     Salvar venda
     <ul>
       <li><strong>metodo: </strong>POST</li>
@@ -206,9 +209,9 @@ Content-Type: application/json; charset=UTF-8
           <br/>
           "list":[
             <br/>
-            {"productId": 1, "amount":10},
+            &nbsp;&nbsp;{"productId": 1, "amount":10},
             <br/>
-            {"productId": 2, "amount":7}
+            &nbsp;&nbsp;{"productId": 2, "amount":7}
             <br/>
             ]
           </li>
