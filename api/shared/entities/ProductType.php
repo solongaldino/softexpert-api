@@ -5,10 +5,9 @@ namespace Shared\Entities;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 
-#[ORM\Entity]
 #[ORM\Entity(repositoryClass:'Shared\Repositories\ProductTypeReposity')]
 #[ORM\Table(name: 'product_type')]
-class Producttype
+class ProductType
 {
     #[ORM\Id]
     #[ORM\Column(name:'id', type:'integer', nullable:false)]
@@ -28,7 +27,7 @@ class Producttype
     #[ORM\JoinTable(name: 'product_type_has_taxe')]
     #[ORM\JoinColumn(name: 'product_type_id', referencedColumnName: 'id')]
     #[ORM\InverseJoinColumn(name: 'taxe_id', referencedColumnName: 'id')]
-    private $taxe = array();
+    public $taxe = array();
 
     /**
      * Constructor

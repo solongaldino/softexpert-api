@@ -5,7 +5,6 @@ namespace Shared\Entities;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 
-#[ORM\Entity]
 #[ORM\Entity(repositoryClass:'Shared\Repositories\TaxeReposity')]
 #[ORM\Table(name: 'taxe')]
 class Taxe
@@ -22,13 +21,13 @@ class Taxe
     public $percentage;
 
     #[ORM\Column(name:'created_at', type:'datetime', nullable:false)]
-    private $createdAt;
+    public $createdAt;
 
     #[ORM\Column(name:'updated_at', type:'datetime', nullable:true)]
-    private $updatedAt;
+    public $updatedAt;
 
     #[ORM\ManyToMany(targetEntity:'Shared\Entities\ProductType', mappedBy:'taxe')]
-    private $productType = array();
+    public $productType = array();
 
     public function __construct()
     {

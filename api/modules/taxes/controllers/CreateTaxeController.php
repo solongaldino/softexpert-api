@@ -28,7 +28,6 @@ class CreateTaxeController extends BaseController {
             $this->responseJson($result);
 
         } catch (\Throwable $th) {
-            
             new ApiError(400, $th->getMessage());
         }
     }

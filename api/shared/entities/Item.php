@@ -4,7 +4,6 @@ namespace Shared\Entities;
 
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity]
 #[ORM\Entity(repositoryClass:'Shared\Repositories\ProductReposity')]
 #[ORM\Table(name: 'product')]
 class Item
@@ -22,11 +21,11 @@ class Item
 
     #[ORM\ManyToOne(targetEntity:'Shared\Entities\Sale')]
     #[ORM\JoinColumn(name: 'sale', referencedColumnName: 'id')]
-    private $sale;
+    public $sale;
 
     #[ORM\ManyToOne(targetEntity:'Shared\Entities\Product')]
     #[ORM\JoinColumn(name: 'product', referencedColumnName: 'id')]
-    private $product;
+    public $product;
 
     public function getId(): int|null
     {

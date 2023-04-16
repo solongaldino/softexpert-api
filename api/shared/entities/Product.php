@@ -4,7 +4,6 @@ namespace Shared\Entities;
 
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity]
 #[ORM\Entity(repositoryClass:'Shared\Repositories\ProductReposity')]
 #[ORM\Table(name: 'product')]
 class Product
@@ -21,7 +20,7 @@ class Product
     public $value;
 
     #[ORM\Column(name:'description', type:'string', length:1000, nullable:true)]
-    private $description;
+    public $description;
 
     #[ORM\Column(name:'created_at', type:'datetime', nullable:false)]
     public $createdAt;
@@ -31,7 +30,7 @@ class Product
 
     #[ORM\ManyToOne(targetEntity:'Shared\Entities\ProductType')]
     #[ORM\JoinColumn(name: 'product_type', referencedColumnName: 'id')]
-    private $productType;
+    public $productType;
 
     public function getId(): int|null
     {

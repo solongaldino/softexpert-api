@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS product (
 CREATE TABLE IF NOT EXISTS taxe (
   id SERIAL PRIMARY KEY,
   name VARCHAR(200) NOT NULL,
-  value NUMERIC(8,2) NOT NULL,
+  percentage NUMERIC(8,2) NOT NULL,
   created_at TIMESTAMP NOT NULL,
   updated_at TIMESTAMP
 );
@@ -66,8 +66,7 @@ CREATE TABLE IF NOT EXISTS sale (
   id SERIAL PRIMARY KEY,
   amount DECIMAL(8,2) NULL,
   taxe DECIMAL(8,2) NULL,
-  created_at TIMESTAMP NOT NULL,
-  PRIMARY KEY (id)
+  created_at TIMESTAMP NOT NULL
 );
 
 -- -----------------------------------------------------
@@ -78,7 +77,6 @@ CREATE TABLE IF NOT EXISTS item (
   amount INTEGER NOT NULL,
   sale INTEGER NOT NULL,
   product INTEGER NOT NULL,
-  PRIMARY KEY (id),
   CONSTRAINT fk_item_sale
     FOREIGN KEY (sale)
     REFERENCES sale (id)
