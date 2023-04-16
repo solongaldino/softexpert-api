@@ -152,7 +152,7 @@ Content-Type: application/json; charset=UTF-8
   <li>
     Cadastro de imposto
     <br/>
-    <img src=”/doc/cadastro-de-imposto.png”>
+    <img src="/doc/cadastro-de-imposto.png">
     <br/>
     <ul>
       <li><strong>metodo: </strong>POST</li>
@@ -171,7 +171,7 @@ Content-Type: application/json; charset=UTF-8
   <li>
     Cadastro de tipo de produto
     <br/>
-    <img src=”/doc/cadastro-de-tipo-de-produto.png”>
+    <img src="/doc/cadastro-de-tipo-de-produto.png">
     <br/>
     <ul>
       <li><strong>metodo: </strong>POST</li>
@@ -190,7 +190,7 @@ Content-Type: application/json; charset=UTF-8
   <li>
     Cadastro de produto
     <br/>
-    <img src=”/doc/cadastro-de-produto.png”>
+    <img src="/doc/cadastro-de-produto.png">
     <br/>
     <ul>
       <li><strong>metodo: </strong>POST</li>
@@ -211,7 +211,7 @@ Content-Type: application/json; charset=UTF-8
   <li>
     Salvar venda
     <br/>
-    <img src=”/doc/cadastro-de-venda.png”>
+    <img src="/doc/cadastro-de-venda.png">
     <br/>
     <ul>
       <li><strong>metodo: </strong>POST</li>
