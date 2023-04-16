@@ -57,8 +57,12 @@ API:
 
 Web:
 
+- [Reactjs](https://react.dev/)
+- [Reactstrap](https://reactstrap.github.io/)
+- [React Query](https://github.com/TanStack/query)
+- [React Hook Form](https://reactstrap.github.io/)
+- [Yup](https://github.com/jquense/yup)
 - [Typescript](https://www.typescriptlang.org/)
-- [Express.js](https://expressjs.com/pt-br/)
 
 OBS: Alguns recusos utilizaram imagem Docker.
 
@@ -147,6 +151,9 @@ Content-Type: application/json; charset=UTF-8
 <ul>
   <li>
     Cadastro de imposto
+    <br/>
+    <img src=”/doc/cadastro-de-imposto.png”>
+    <br/>
     <ul>
       <li><strong>metodo: </strong>POST</li>
       <li><strong>url: </strong>http://localhost:9090/taxes</li>
@@ -163,6 +170,9 @@ Content-Type: application/json; charset=UTF-8
   <br/>
   <li>
     Cadastro de tipo de produto
+    <br/>
+    <img src=”/doc/cadastro-de-tipo-de-produto.png”>
+    <br/>
     <ul>
       <li><strong>metodo: </strong>POST</li>
       <li><strong>url: </strong>http://localhost:9090/products-type</li>
@@ -179,6 +189,9 @@ Content-Type: application/json; charset=UTF-8
   <br/>
   <li>
     Cadastro de produto
+    <br/>
+    <img src=”/doc/cadastro-de-produto.png”>
+    <br/>
     <ul>
       <li><strong>metodo: </strong>POST</li>
       <li><strong>url: </strong>http://localhost:9090/product</li>
@@ -197,6 +210,9 @@ Content-Type: application/json; charset=UTF-8
   <br/>
   <li>
     Salvar venda
+    <br/>
+    <img src=”/doc/cadastro-de-venda.png”>
+    <br/>
     <ul>
       <li><strong>metodo: </strong>POST</li>
       <li><strong>url: </strong>http://localhost:9090/sales</li>
@@ -209,9 +225,9 @@ Content-Type: application/json; charset=UTF-8
           <br/>
           "list":[
             <br/>
-            &nbsp;&nbsp;{"productId": 1, "amount":10},
+            &nbsp;&nbsp;&nbsp;&nbsp;{"productId": 1, "amount":10},
             <br/>
-            &nbsp;&nbsp;{"productId": 2, "amount":7}
+            &nbsp;&nbsp;&nbsp;&nbsp;{"productId": 2, "amount":7}
             <br/>
             ]
           </li>
@@ -220,6 +236,10 @@ Content-Type: application/json; charset=UTF-8
     </ul>
   </li>
 </ul>
+
+**Modelagem do banco de dados**
+
+![](/doc/shcema-db.png)
 
 <!-- CONTACT -->
 
