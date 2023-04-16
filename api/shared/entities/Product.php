@@ -3,12 +3,11 @@
 namespace Shared\Entities;
 
 use Doctrine\ORM\Mapping as ORM;
-use Doctrine\Common\Collections\ArrayCollection;
 
 #[ORM\Entity]
-#[ORM\Entity(repositoryClass:'Shared\Repositories\TaxeReposity')]
-#[ORM\Table(name: 'taxe')]
-class Taxe
+#[ORM\Entity(repositoryClass:'Shared\Repositories\ProductReposity')]
+#[ORM\Table(name: 'product')]
+class Product
 {
     #[ORM\Id]
     #[ORM\Column(name:'id', type:'integer', nullable:false)]
@@ -18,49 +17,54 @@ class Taxe
     #[ORM\Column(name:'name', type:'string', length:200, nullable:false)]
     public string $name;
 
-    #[ORM\Column(name:'percentage', type:'decimal', precision:8, scale:2, nullable:false)]
-    public $percentage;
+    #[ORM\Column(name:'value', type:'decimal', precision:8, scale:2, nullable:false)]
+    public $value;
+
+    #[ORM\Column(name:'description', type:'string', length:1000, nullable:true)]
+    private $description;
 
     #[ORM\Column(name:'created_at', type:'datetime', nullable:false)]
-    private $createdAt;
+    public $createdAt;
 
     #[ORM\Column(name:'updated_at', type:'datetime', nullable:true)]
-    private $updatedAt;
+    public $updatedAt;
 
-    #[ORM\ManyToMany(targetEntity:'Shared\Entities\ProductType', mappedBy:'taxe')]
-    private $productType = array();
-
-    public function __construct()
-    {
-        $this->productType = new ArrayCollection();
-    }
+    #[ORM\ManyToOne(targetEntity:'Shared\Entities\ProductType')]
+    #[ORM\JoinColumn(name: 'product_type', referencedColumnName: 'id')]
+    private $productType;
 
     public function getId(): int|null
     {
         return $this->id;
     }
 
-    
     public function getName(): string
     {
         return $this->name;
     }
 
-    
     public function setName($name): void
     {
         $this->name = $name;
     }
 
-    public function getPercentage()
-    {
-        return $this->percentage;
+    public function getValue(){
+        return $this->value;
     }
 
-    public function setPercentage($percentage): void
-    {
-        $this->percentage = $percentage;
+    public function setValue($value){
+        $this->value = $value;
     }
+
+    public function getDescription(): string
+    {
+        return $this->description;
+    }
+
+    public function setDescription($description): void
+    {
+        $this->description = $description;
+    } 
 
     public function getCreatedAt(): \DateTime
     {
@@ -82,9 +86,15 @@ class Taxe
         $this->updatedAt = $updatedAt;
     }
 
-    public function getProductType(): ArrayCollection
+    public function getProductType(): ProductType
     {
         return $this->productType;
     }
+
+    public function setProductType($productType): void
+    {
+        $this->productType = $productType;
+    }
+
 
 }

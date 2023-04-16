@@ -6,9 +6,9 @@ use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 
 #[ORM\Entity]
-#[ORM\Entity(repositoryClass:'Shared\Repositories\TaxeReposity')]
-#[ORM\Table(name: 'taxe')]
-class Taxe
+#[ORM\Entity(repositoryClass:'Shared\Repositories\ProductTypeReposity')]
+#[ORM\Table(name: 'product_type')]
+class Producttype
 {
     #[ORM\Id]
     #[ORM\Column(name:'id', type:'integer', nullable:false)]
@@ -18,21 +18,24 @@ class Taxe
     #[ORM\Column(name:'name', type:'string', length:200, nullable:false)]
     public string $name;
 
-    #[ORM\Column(name:'percentage', type:'decimal', precision:8, scale:2, nullable:false)]
-    public $percentage;
-
     #[ORM\Column(name:'created_at', type:'datetime', nullable:false)]
-    private $createdAt;
+    public $createdAt;
 
     #[ORM\Column(name:'updated_at', type:'datetime', nullable:true)]
-    private $updatedAt;
+    public $updatedAt;
 
-    #[ORM\ManyToMany(targetEntity:'Shared\Entities\ProductType', mappedBy:'taxe')]
-    private $productType = array();
+    #[ORM\ManyToMany(targetEntity:'Shared\Entities\Taxe', inversedBy:'productType')]
+    #[ORM\JoinTable(name: 'product_type_has_taxe')]
+    #[ORM\JoinColumn(name: 'product_type_id', referencedColumnName: 'id')]
+    #[ORM\InverseJoinColumn(name: 'taxe_id', referencedColumnName: 'id')]
+    private $taxe = array();
 
+    /**
+     * Constructor
+     */
     public function __construct()
     {
-        $this->productType = new ArrayCollection();
+        $this->taxe = new ArrayCollection();
     }
 
     public function getId(): int|null
@@ -50,16 +53,6 @@ class Taxe
     public function setName($name): void
     {
         $this->name = $name;
-    }
-
-    public function getPercentage()
-    {
-        return $this->percentage;
-    }
-
-    public function setPercentage($percentage): void
-    {
-        $this->percentage = $percentage;
     }
 
     public function getCreatedAt(): \DateTime
@@ -82,9 +75,14 @@ class Taxe
         $this->updatedAt = $updatedAt;
     }
 
-    public function getProductType(): ArrayCollection
+    public function getTaxe(): ArrayCollection
     {
-        return $this->productType;
+        return $this->taxe;
+    }
+
+    public function setTaxe($taxe): void
+    {
+        $this->taxe = $taxe;
     }
 
 }

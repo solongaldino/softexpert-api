@@ -18,6 +18,8 @@ class CreateTaxeUseCase{
 
         $entity = new Taxe();
         $entity->setName($data->getName());
+        $entity->setPercentage($data->getPercentage());
+        $entity->setCreatedAt(new \DateTime('now'));
 
         return $this->taxeRepository->save($entity);
     }

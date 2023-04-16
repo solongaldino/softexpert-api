@@ -6,7 +6,7 @@ class CreateTaxeDTO {
     
     private String $name;
     
-    private Int $percentage;
+    private Float $percentage;
 
     function __construct(Array $data){
         $this->name = $data['name'];
@@ -18,7 +18,7 @@ class CreateTaxeDTO {
         return $this->name;
     }
 
-    public function getPercentage(): Int
+    public function getPercentage(): Float
     {
         return $this->percentage;
     }
