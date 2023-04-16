@@ -4,7 +4,7 @@ namespace Shared\Entities;
 
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass:'Shared\Repositories\SaleReposity')]
+#[ORM\Entity]
 #[ORM\Table(name: 'sale')]
 class Sale
 {

@@ -5,7 +5,7 @@ namespace Shared\Entities;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 
-#[ORM\Entity(repositoryClass:'Shared\Repositories\ProductTypeReposity')]
+#[ORM\Entity]
 #[ORM\Table(name: 'product_type')]
 class ProductType
 {
@@ -74,14 +74,14 @@ class ProductType
         $this->updatedAt = $updatedAt;
     }
 
-    public function getTaxe(): ArrayCollection
+    public function getTaxes(): ArrayCollection
     {
         return $this->taxe;
     }
 
-    public function setTaxe($taxe): void
+    public function addTaxe(Taxe $taxe): void
     {
-        $this->taxe = $taxe;
+        $this->taxe[] = $taxe;
     }
 
 }

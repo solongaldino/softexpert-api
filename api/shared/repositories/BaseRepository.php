@@ -2,10 +2,9 @@
 
 namespace Shared\Repositories;
 
-use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
 
-class BaseRepository{
+class BaseRepository {
     
     private $entityManager;
 
@@ -15,6 +14,11 @@ class BaseRepository{
 
     public function getEntityManager(){
         return $this->entityManager;
+    }
+
+    public function findById($entity, $id)
+    {
+        return $this->getEntityManager()->getRepository($entity)->find($id);
     }
 
     public function save($e){

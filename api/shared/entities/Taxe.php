@@ -5,7 +5,7 @@ namespace Shared\Entities;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 
-#[ORM\Entity(repositoryClass:'Shared\Repositories\TaxeReposity')]
+#[ORM\Entity]
 #[ORM\Table(name: 'taxe')]
 class Taxe
 {

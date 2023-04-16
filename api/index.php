@@ -14,7 +14,7 @@ $dotenv->load();
 
 use Shared\Utils\Router;
 
-$modules = ["products", "taxes"];
+$modules = ["products", "products-type", "taxes"];
 
 $router = new Router($modules);
 $router->run();
