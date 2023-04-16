@@ -144,72 +144,75 @@ Content-Type: application/json; charset=UTF-8
 
 **Rotas**
 
-- Cadastro de imposto
-
 <ul>
-  <li><strong>metodo: </strong>POST</li>
-  <li><strong>url: </strong>http://localhost:9090/taxes</li>
   <li>
-    <strong>body: </strong>
-    <br/>
+    Cadastro de imposto
     <ul>
-      <li><strong>name: </strong>string</li>
-      <li><strong>percentage: </strong>float | int</li>
+      <li><strong>metodo: </strong>POST</li>
+      <li><strong>url: </strong>http://localhost:9090/taxes</li>
+      <li>
+        <strong>body: </strong>
+        <br/>
+        <ul>
+          <li><strong>name: </strong>string</li>
+          <li><strong>percentage: </strong>float | int</li>
+        </ul>
+      </li>
     </ul>
   </li>
-</ul>
-
-- Cadastro de tipo de produto
-
-<ul>
-  <li><strong>metodo: </strong>POST</li>
-  <li><strong>url: </strong>http://localhost:9090/products-type</li>
   <li>
-    <strong>body: </strong>
-    <br/>
+    Cadastro de tipo de produto
     <ul>
-      <li><strong>name: </strong>string</li>
-      <li><strong>taxeId: </strong>int</li>
+      <li><strong>metodo: </strong>POST</li>
+      <li><strong>url: </strong>http://localhost:9090/products-type</li>
+      <li>
+        <strong>body: </strong>
+        <br/>
+        <ul>
+          <li><strong>name: </strong>string</li>
+          <li><strong>taxeId: </strong>int</li>
+        </ul>
+      </li>
     </ul>
   </li>
-</ul>
-
-- Cadastro de produto
-
-<ul>
-  <li><strong>metodo: </strong>POST</li>
-  <li><strong>url: </strong>http://localhost:9090/product</li>
   <li>
-    <strong>body: </strong>
-    <br/>
+    Cadastro de produto
     <ul>
-      <li><strong>productTypeId: </strong>int</li>
-      <li><strong>name: </strong>string</li>
-      <li><strong>value: </strong>float | int</li>
-      <li><strong>description: </strong>string</li>
+      <li><strong>metodo: </strong>POST</li>
+      <li><strong>url: </strong>http://localhost:9090/product</li>
+      <li>
+        <strong>body: </strong>
+        <br/>
+        <ul>
+          <li><strong>productTypeId: </strong>int</li>
+          <li><strong>name: </strong>string</li>
+          <li><strong>value: </strong>float | int</li>
+          <li><strong>description: </strong>string</li>
+        </ul>
+      </li>
     </ul>
   </li>
-</ul>
-
-- Salvar venda
-
-<ul>
-  <li><strong>metodo: </strong>POST</li>
-  <li><strong>url: </strong>http://localhost:9090/sales</li>
   <li>
-    <strong>body: </strong>
-    <br/>
+    Salvar venda
     <ul>
-      <li><strong>lista: </strong>array</li>
-      <li><strong>Exemplo de lista: </strong>
-      <br/>
-      "list":[
+      <li><strong>metodo: </strong>POST</li>
+      <li><strong>url: </strong>http://localhost:9090/sales</li>
+      <li>
+        <strong>body: </strong>
         <br/>
-        {"productId": 1, "amount":10},
-        <br/>
-        {"productId": 2, "amount":7}
-        <br/>
-        ]
+        <ul>
+          <li><strong>lista: </strong>array</li>
+          <li><strong>Exemplo de lista: </strong>
+          <br/>
+          "list":[
+            <br/>
+            {"productId": 1, "amount":10},
+            <br/>
+            {"productId": 2, "amount":7}
+            <br/>
+            ]
+          </li>
+        </ul>
       </li>
     </ul>
   </li>
