@@ -3,7 +3,7 @@
 namespace Shared\Entities;
 
 use Doctrine\ORM\Mapping as ORM;
-use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 
 #[ORM\Entity]
 #[ORM\Table(name: 'taxe')]
@@ -31,7 +31,7 @@ class Taxe
 
     public function __construct()
     {
-        $this->productType = new ArrayCollection();
+        $this->productType = new Collection();
     }
 
     public function getId(): int|null
@@ -81,7 +81,7 @@ class Taxe
         $this->updatedAt = $updatedAt;
     }
 
-    public function getProductType(): ArrayCollection
+    public function getProductType(): Collection
     {
         return $this->productType;
     }

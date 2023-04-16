@@ -1,2 +1,3 @@
+data/DoctrineORMModule/Proxy/
 vendor/
 .env

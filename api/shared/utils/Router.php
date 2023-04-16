@@ -26,14 +26,34 @@ class Router
   }
 
   public function run(){
-    foreach ($this->routes as $key => $value) {
-      if($_SERVER['REQUEST_URI'] === $value['path'] && $_SERVER['REQUEST_METHOD'] === $value['method']){
 
-        $controllerNamespace = '\\'.$value['controller'];
+    $amountRoutes = count($this->routes);
+    
+    foreach ($this->routes as $value) {
 
-        $controller = $this->container->get($controllerNamespace);
+      $amountRoutes--;
+      
+      if($_SERVER['REQUEST_URI'] === $value['path']){
+
+        if($_SERVER['REQUEST_METHOD'] === $value['method']){
+
+          $controllerNamespace = '\\'.$value['controller'];
+
+          $controller = $this->container->get($controllerNamespace);
         
-        $controller->{$value['action']}();
+          $controller->{$value['action']}();
+
+        }else{
+          if($amountRoutes <=0){
+            new ApiError(404, "Method not found");
+          }
+        }
+ 
+      }else{
+        
+        if($amountRoutes <=0){
+          new ApiError(404, "Url not found");
+        }
         
       }
     }

@@ -5,16 +5,13 @@ namespace Shared\Entities;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity]
-#[ORM\Table(name: 'product')]
+#[ORM\Table(name: 'item')]
 class Item
 {
     #[ORM\Id]
     #[ORM\Column(name:'id', type:'integer', nullable:false)]
     #[ORM\GeneratedValue]
     public int $id;
-
-    #[ORM\Column(name:'name', type:'string', length:200, nullable:false)]
-    public string $name;
 
     #[ORM\Column(name:'amount', type:'integer', nullable:false)]
     public $amount;

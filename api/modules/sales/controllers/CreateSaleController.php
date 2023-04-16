@@ -24,10 +24,11 @@ class CreateSaleController extends BaseController {
 
             $result = $this->createSaleUseCase->run($data);
 
-            $this->responseJson($result);
+            $this->responseJson($result, 201);
 
         } catch (\Throwable $th) {
-            new ApiError(400, $th->getMessage());
+            throw $th;
+            //  new ApiError(400, $th->getMessage());
         }
         
     }

@@ -22,9 +22,6 @@ class Sale
     #[ORM\Column(name:'created_at', type:'datetime', nullable:false)]
     public $createdAt;
 
-    #[ORM\Column(name:'updated_at', type:'datetime', nullable:true)]
-    public $updatedAt;
-
     public function getId(): int|null
     {
         return $this->id;
@@ -54,15 +51,5 @@ class Sale
     public function setCreatedAt($createdAt): void
     {
         $this->createdAt = $createdAt;
-    }
-
-    public function getUpdatedAt(): \DateTime | null
-    {
-        return $this->updatedAt;
-    }
-
-    public function setUpdatedAt($updatedAt): void
-    {
-        $this->updatedAt = $updatedAt;
     }
 }

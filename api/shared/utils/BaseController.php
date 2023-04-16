@@ -34,6 +34,8 @@ class BaseController {
             echo json_encode($data);
         }elseif(is_object($data)){
             echo json_encode($data);
+        }elseif(!isset($data)){
+            exit();
         }else{
             new ApiError(400, "Convert response error");
         }
