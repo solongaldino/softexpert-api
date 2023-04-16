@@ -160,8 +160,8 @@ Content-Type: application/json; charset=UTF-8
       </li>
     </ul>
   </li>
-  <li>
   <br/>
+  <li>
     Cadastro de tipo de produto
     <ul>
       <li><strong>metodo: </strong>POST</li>
@@ -176,8 +176,8 @@ Content-Type: application/json; charset=UTF-8
       </li>
     </ul>
   </li>
-  <li>
   <br/>
+  <li>
     Cadastro de produto
     <ul>
       <li><strong>metodo: </strong>POST</li>
@@ -194,8 +194,8 @@ Content-Type: application/json; charset=UTF-8
       </li>
     </ul>
   </li>
-  <li>
   <br/>
+  <li>
     Salvar venda
     <ul>
       <li><strong>metodo: </strong>POST</li>
