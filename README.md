@@ -2,7 +2,7 @@
 <br />
 <p align="center">
 
-  <h3 align="center">softexpert gestão de vendas</h3>
+  <h3 align="center">Softexpert gestão de vendas</h3>
 
   <p align="center">
     Repositório das aplicações Web e API
@@ -115,8 +115,8 @@ http://localhost:16453
 ```
 
 <ul>
-  <li><strong>Email:</strong>admin@postgres.com</li>
-  <li><strong>Senha:</strong>postgres</li>
+  <li><strong>Email: </strong>admin@postgres.com</li>
+  <li><strong>Senha: </strong>postgres</li>
 </ul>
 
 **API status**
@@ -129,16 +129,35 @@ http://localhost:9090/status
 
 Exemplo de clientes:
 
-- [Insomnia](https://insomnia.rest/) **Recomendado**
+- [Insomnia](https://insomnia.rest/)
 - [Postman](https://www.postman.com/)
 
 **Recomendado Insomnia**
 
 No projeto contem o arquivo para importação contendo toda coleção de rotas.
 
+**Comucação**
+
+Request e Response em:
+
+Content-Type: application/json; charset=UTF-8
+
 **Rotas**
 
-Cadastro de imposto
+#### Cadastro de imposto
+
+<ul>
+  <li><strong>Metodo: </strong>POST</li>
+  <li><strong>Url: </strong>http://localhost:9090/taxes</li>
+  <li>
+    <strong>Body: </strong>
+    <br/>
+    <ul>
+      <li><strong>name: </strong>string</li>
+      <li><strong>percentage: </strong>float | int</li>
+    </ul>
+  </li>
+</ul>
 
 ```sh
 POST http://localhost:9090/taxes
