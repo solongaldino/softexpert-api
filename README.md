@@ -238,8 +238,8 @@ Content-Type: application/json; charset=UTF-8
 </ul>
 
 **Modelagem do banco de dados**
-
-![](/doc/shcema-db.png)
+<br/><br/>
+<img src="/doc/schema-db.png">
 
 <!-- CONTACT -->
 
