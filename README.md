@@ -144,13 +144,13 @@ Content-Type: application/json; charset=UTF-8
 
 **Rotas**
 
-#### Cadastro de imposto
+- Cadastro de imposto
 
 <ul>
-  <li><strong>Metodo: </strong>POST</li>
-  <li><strong>Url: </strong>http://localhost:9090/taxes</li>
+  <li><strong>metodo: </strong>POST</li>
+  <li><strong>url: </strong>http://localhost:9090/taxes</li>
   <li>
-    <strong>Body: </strong>
+    <strong>body: </strong>
     <br/>
     <ul>
       <li><strong>name: </strong>string</li>
@@ -159,27 +159,61 @@ Content-Type: application/json; charset=UTF-8
   </li>
 </ul>
 
-```sh
-POST http://localhost:9090/taxes
-```
+- Cadastro de tipo de produto
 
-Cadastro de tipo de produto
+<ul>
+  <li><strong>metodo: </strong>POST</li>
+  <li><strong>url: </strong>http://localhost:9090/products-type</li>
+  <li>
+    <strong>body: </strong>
+    <br/>
+    <ul>
+      <li><strong>name: </strong>string</li>
+      <li><strong>taxeId: </strong>int</li>
+    </ul>
+  </li>
+</ul>
 
-```sh
-POST http://localhost:9090/products-type
-```
+- Cadastro de produto
 
-Cadastro de produto
+<ul>
+  <li><strong>metodo: </strong>POST</li>
+  <li><strong>url: </strong>http://localhost:9090/product</li>
+  <li>
+    <strong>body: </strong>
+    <br/>
+    <ul>
+      <li><strong>productTypeId: </strong>int</li>
+      <li><strong>name: </strong>string</li>
+      <li><strong>value: </strong>float | int</li>
+      <li><strong>description: </strong>string</li>
+    </ul>
+  </li>
+</ul>
 
-```sh
-POST http://localhost:9090/product
-```
+- Salvar venda
 
-Salvar venda
-
-```sh
-POST http://localhost:9090/sale
-```
+<ul>
+  <li><strong>metodo: </strong>POST</li>
+  <li><strong>url: </strong>http://localhost:9090/sales</li>
+  <li>
+    <strong>body: </strong>
+    <br/>
+    <ul>
+      <li><strong>lista: </strong>array</li>
+      <li><strong>Exemplo de lista: </strong>
+      <br/>
+      "list":[
+        <br/>
+        {"productId": 1, "amount":10},
+        <br/>
+        {"productId": 2, "amount":7}
+        <br/>
+        ]
+      </li>
+    </ul>
+  </li>
+</ul>
 
 <!-- CONTACT -->
 
