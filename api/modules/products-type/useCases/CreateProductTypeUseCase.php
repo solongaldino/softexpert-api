@@ -4,17 +4,17 @@ namespace Modules\ProductsType\UseCases;
 
 use Modules\ProductsType\Dtos\CreateProductTypeDTO;
 use Shared\Entities\ProductType;
-use Shared\Repositories\ProductsTypeRepository;
+use Shared\Repositories\ProductTypeRepository;
 use Shared\Repositories\TaxeRepository;
 use Shared\Entities\Taxe;
 use Shared\Utils\ApiError;
 
 class CreateProductTypeUseCase{
-    private $productsTypeRepository;
+    private $productTypeRepository;
     private $taxeRepository;
 
-    function __construct(ProductsTypeRepository $productsTypeRepository, TaxeRepository $taxeRepository){
-        $this->productsTypeRepository = $productsTypeRepository;
+    function __construct(ProductTypeRepository $productTypeRepository, TaxeRepository $taxeRepository){
+        $this->productTypeRepository = $productTypeRepository;
         $this->taxeRepository = $taxeRepository;
     }
 
@@ -28,6 +28,6 @@ class CreateProductTypeUseCase{
         $entity->addTaxe($taxe);
         $entity->setCreatedAt(new \DateTime('now'));
 
-        return $this->productsTypeRepository->save($entity);
+        return $this->productTypeRepository->save($entity);
     }
 }

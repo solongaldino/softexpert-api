@@ -27,8 +27,7 @@ class CreateProductTypeController extends BaseController {
             $this->responseJson($result);
 
         } catch (\Throwable $th) {
-            throw $th;
-            // new ApiError(400, $th->getMessage());
+            new ApiError(400, $th->getMessage());
         }
         
     }

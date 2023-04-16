@@ -2,19 +2,34 @@
 
 namespace Modules\Products\Controllers;
 
+use Modules\Products\Dtos\CreateProductDTO;
 use Shared\Utils\BaseController;
 use Modules\Products\UseCases\CreateProductUseCase;
+use Shared\Utils\ApiError;
 
 class CreateProductController extends BaseController {
 
-    private $createProductsUseCase;
+    private $createProductUseCase;
 
-    function __construct(CreateProductUseCase $createProductsUseCase){
-        $this->createProductsUseCase = $createProductsUseCase;
+    function __construct(CreateProductUseCase $createProductUseCase){
+        $this->createProductUseCase = $createProductUseCase;
     }
 
     public function handle(){
-        $this->createProductsUseCase->run();
+        try {
+
+            $body = $this->getBody();
+            
+            $data = new CreateProductDTO($body);
+
+            $result = $this->createProductUseCase->run($data);
+
+            $this->responseJson($result);
+
+        } catch (\Throwable $th) {
+            new ApiError(400, $th->getMessage());
+        }
+        
     }
 
 }
