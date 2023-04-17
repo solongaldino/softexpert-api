@@ -24,7 +24,7 @@
 
 ## Sobre o Projeto
 
-Aplicação desenvolvida para atender os requisitos de um sistema de gestão de vendas feito sem utilizar nenhum framerwork em seu backend com php, podendo utilizar bibliotecas. Ja seu frontend foi desenvolvido utilizando ReactJs com TypeScript e algumas bibliotecas conhecidas da comunidade Js.
+Aplicação desenvolvida para atender os requisitos de um sistema de gestão para vendas, sem utilizar framerworks em seu backend, podendo utilizar bibliotecas. Ja seu frontend foi desenvolvido utilizando ReactJs com TypeScript e algumas bibliotecas.
 
 A aplicação contas com as seguintes funcionalidades:
 
@@ -236,6 +236,8 @@ Content-Type: application/json; charset=UTF-8
     </ul>
   </li>
 </ul>
+
+Para cada rota existe seu par de listagem de dados
 
 **Modelagem do banco de dados**
 <br/><br/>
