@@ -12,7 +12,7 @@ WORKDIR /var/www/html/api
 
 COPY ./api/ ./
 
-RUN mkdir data/DoctrineORMModule/Proxy
+RUN mkdir -p data/DoctrineORMModule/Proxy
 
 RUN chmod -R 777 data/DoctrineORMModule/Proxy
 

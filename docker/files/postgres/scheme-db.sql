@@ -88,3 +88,38 @@ CREATE TABLE IF NOT EXISTS item (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION
 );
+
+INSERT INTO taxe (name, percentage, created_at)
+VALUES
+('ICMS', 17, current_timestamp),
+('PIS', 0.65, current_timestamp),
+('COFINS', 3, current_timestamp),
+('IRPJ', 15, current_timestamp),
+('CSLL', 9, current_timestamp),
+('IPI', 24.75, current_timestamp);
+
+INSERT INTO product_type (name, created_at)
+VALUES
+('unificado', current_timestamp),
+('parcial', current_timestamp);
+
+INSERT INTO product_type_has_taxe (product_type_id, taxe_id)
+VALUES
+(1, 1),
+(1, 2),
+(1, 3),
+(1, 4),
+(1, 5),
+(1, 6),
+(2, 1),
+(2, 2),
+(2, 3);
+
+INSERT INTO product (product_type, name, value, description, created_at)
+VALUES
+(1, 'Lâmpada led 6W', 6.75, 'Resistente a chuva IPV5', current_timestamp),
+(1, 'Lâmpada led 7W', 8.40, 'Resistente a chuva IPV5', current_timestamp),
+(1, 'Lâmpada led 9W', 10, 'Resistente a chuva IPV5', current_timestamp),
+(1, 'Lâmpada led 12W', 14.60, 'Resistente a chuva IPV5', current_timestamp),
+(2, 'Refletor led 50W', 76.20, 'Resistente a chuva IPV5 com base de fixação', current_timestamp),
+(2, 'Refletor led 90W', 145.90, 'Resistente a chuva IPV5 com base de fixação', current_timestamp);
