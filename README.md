@@ -240,6 +240,13 @@ Content-Type: application/json; charset=UTF-8
 **Modelagem do banco de dados**
 <br/><br/>
 <img src="/doc/schema-db.png">
+<br/><br/>
+
+- O script de inicialização contendo dados encontra-se em:
+
+```sh
+/docker/files/postgres/scheme-db.sql
+```
 
 <!-- CONTACT -->
 
