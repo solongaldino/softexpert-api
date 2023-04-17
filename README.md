@@ -252,6 +252,6 @@ Content-Type: application/json; charset=UTF-8
 
 ## Contato
 
-Solon Galdino - solon@xxx.com
+Solon Galdino - solonfisicaufpb@gmail.com
 
 _Link do Projeto: [Github](https://github.com/solongaldino/softexpert-test-full-stack-developer)_

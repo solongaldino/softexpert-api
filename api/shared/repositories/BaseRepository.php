@@ -21,6 +21,11 @@ class BaseRepository {
         return $this->getEntityManager()->getRepository($entity)->find($id);
     }
 
+    public function findAll($entity)
+    {
+        return $this->getEntityManager()->getRepository($entity)->findAll();
+    }
+
     public function save($e){
         try{
             $this->getEntityManager()->persist($e);

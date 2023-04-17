@@ -1,10 +1,11 @@
 <?php
 
-namespace Modules\Taxes\UseCases;
+namespace Modules\ProductsType\UseCases;
 
 use Shared\Repositories\BaseRepository;
+use Shared\Entities\ProductType;
 
-class ListTaxesUseCase{
+class ListAllProductsTypeUseCase{
 
     private $baseRepository;
 
@@ -13,6 +14,6 @@ class ListTaxesUseCase{
     }
 
     public function run(){
-        return ["message"=> "ListTaxesUseCase", "type"=>"test"];
+        return $this->baseRepository->findAll(ProductType::class);
     }
 }

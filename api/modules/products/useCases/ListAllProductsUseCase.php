@@ -3,8 +3,9 @@
 namespace Modules\Products\UseCases;
 
 use Shared\Repositories\BaseRepository;
+use Shared\Entities\Product;
 
-class ListProductsUseCase{
+class ListAllProductsUseCase{
 
     private $baseRepository;
 
@@ -13,6 +14,6 @@ class ListProductsUseCase{
     }
 
     public function run(){
-        return ["message"=> "Olá mundo", "type"=>"test"];
+        return $this->baseRepository->findAll(Product::class);
     }
 }
