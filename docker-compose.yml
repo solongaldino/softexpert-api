@@ -2,7 +2,7 @@ version: "3.9"
 
 services:
   nginx:
-    image: nginx:latest
+    image: nginx
     container_name: softexpert-nginx
     ports:
       - "8080:80"

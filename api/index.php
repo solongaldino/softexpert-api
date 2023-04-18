@@ -1,6 +1,9 @@
 <?php
 
-namespace Softexpert\Api;
+header('Access-Control-Allow-Origin', '*');
+header('Access-Control-Allow-Methods', '*');
+header('Access-Control-Allow-Headers', '*');
+header('Access-Control-Max-Age', '86400');
 
 ini_set('display_errors', 1);
 ini_set('display_startup_erros', 1);
@@ -16,5 +19,9 @@ use Shared\Utils\Router;
 
 $modules = ["products", "products-type", "taxes", "sales"];
 
-$router = new Router($modules);
-$router->run();
+try {
+    $router = new Router($modules);
+    $router->run();
+} catch (\Throwable $th) {
+    throw $th;
+}
