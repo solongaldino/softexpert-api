@@ -16,7 +16,6 @@ class CreateTaxeController extends BaseController {
     }
 
     public function handle(){
-
         try {
 
             $body = $this->getBody();
@@ -24,7 +23,7 @@ class CreateTaxeController extends BaseController {
             $data = new CreateTaxeDTO($body);
 
             $result = $this->createTaxeUseCase->run($data);
-
+            
             $this->responseJson($result);
 
         } catch (\Throwable $th) {
