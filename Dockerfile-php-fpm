@@ -15,6 +15,3 @@ COPY ./api/ ./
 RUN mkdir -p data/DoctrineORMModule/Proxy
 
 RUN chmod -R 777 data/DoctrineORMModule/Proxy
-
-RUN php composer.phar install
-
