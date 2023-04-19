@@ -32,8 +32,10 @@ class Router
     foreach ($this->routes as $value) {
 
       $amountRoutes--;
-      
-      if($_SERVER['REQUEST_URI'] === $value['path']){
+
+      $path = explode("?",$_SERVER['REQUEST_URI']);
+
+      if($path[0] === $value['path']){
 
         if($_SERVER['REQUEST_METHOD'] === $value['method']){
 

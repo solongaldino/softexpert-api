@@ -74,11 +74,6 @@ class ProductType
         $this->updatedAt = $updatedAt;
     }
 
-    public function getTaxes(): ArrayCollection
-    {
-        return $this->taxe;
-    }
-
     public function addTaxe(Taxe $taxe): void
     {
         $this->taxe[] = $taxe;

@@ -16,6 +16,9 @@ class BaseController {
     }
 
     public function getQuery(){
+        $queries = array();
+        parse_str($_SERVER['QUERY_STRING'], $queries);
+        $this->query = $queries;
         return $this->query;
     }
 
