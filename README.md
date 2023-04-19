@@ -106,7 +106,7 @@ docker-compose up
 
 2. Para acessar os recursos web você devera acessar as seguintes urls abaixo:
 
-**Aplicação web**
+**Aplicação web EM DESENVOLVIMENTO**
 
 ```sh
 http://localhost:8080
