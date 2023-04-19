@@ -45,7 +45,6 @@ class ComposerStaticInit134298f2391b0a870db0d8725209d49d
             'Psr\\Log\\' => 8,
             'Psr\\Container\\' => 14,
             'Psr\\Cache\\' => 10,
-            'PhpOption\\' => 10,
             'PhpDocReader\\' => 13,
         ),
         'L' => 
@@ -56,13 +55,8 @@ class ComposerStaticInit134298f2391b0a870db0d8725209d49d
         array (
             'Invoker\\' => 8,
         ),
-        'G' => 
-        array (
-            'GrahamCampbell\\ResultType\\' => 26,
-        ),
         'D' => 
         array (
-            'Dotenv\\' => 7,
             'Doctrine\\Persistence\\' => 21,
             'Doctrine\\ORM\\' => 13,
             'Doctrine\\Instantiator\\' => 22,
@@ -158,10 +152,6 @@ class ComposerStaticInit134298f2391b0a870db0d8725209d49d
         array (
             0 => __DIR__ . '/..' . '/psr/cache/src',
         ),
-        'PhpOption\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/phpoption/phpoption/src/PhpOption',
-        ),
         'PhpDocReader\\' => 
         array (
             0 => __DIR__ . '/..' . '/php-di/phpdoc-reader/src/PhpDocReader',
@@ -173,14 +163,6 @@ class ComposerStaticInit134298f2391b0a870db0d8725209d49d
         'Invoker\\' => 
         array (
             0 => __DIR__ . '/..' . '/php-di/invoker/src',
-        ),
-        'GrahamCampbell\\ResultType\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/graham-campbell/result-type/src',
-        ),
-        'Dotenv\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/vlucas/phpdotenv/src',
         ),
         'Doctrine\\Persistence\\' => 
         array (
